@@ -38,7 +38,7 @@ function InteractiveConfigurator() {
   const selected = buildingTypes[selectedBuilding]
 
   return (
-    <div className="bg-white/[0.03] border border-white/[0.08] overflow-hidden">
+    <div className="bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm overflow-hidden">
       {/* Progress header */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.06]">
         <div className="flex items-center gap-2">

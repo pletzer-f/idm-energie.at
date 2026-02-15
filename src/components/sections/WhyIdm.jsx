@@ -137,7 +137,7 @@ export default function WhyIdm() {
                         className={activeIndex === i ? 'relative' : 'absolute inset-x-0 top-0'}
                         style={{ pointerEvents: activeIndex === i ? 'auto' : 'none' }}
                       >
-                        <div className="bg-n-950/95 p-1">
+                        <div className="bg-n-950/90 backdrop-blur-sm p-1">
                           <div className="flex items-center gap-3 mb-4">
                             <span className="text-idm font-mono font-bold text-xl">
                               {milestone.year}
@@ -179,7 +179,7 @@ export default function WhyIdm() {
                           alt={milestone.title}
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gitter opacity-40 pointer-events-none" />
+                        <div className="absolute inset-0 bg-gitter opacity-60 mix-blend-overlay" />
                         <div className="absolute inset-0 bg-gradient-to-t from-n-950/80 via-transparent to-n-950/60" />
                       </motion.div>
                     ))}
@@ -250,7 +250,7 @@ export default function WhyIdm() {
                           className="w-full h-full object-cover"
                         />
                         {/* Gitter overlay on image */}
-                        <div className="absolute inset-0 bg-gitter opacity-40 pointer-events-none" />
+                        <div className="absolute inset-0 bg-gitter opacity-60 mix-blend-overlay" />
                         <div className="absolute inset-0 bg-gradient-to-r from-n-950/60 to-transparent" />
                         <div className="absolute inset-0 bg-gradient-to-t from-n-950/40 to-transparent" />
                       </motion.div>
