@@ -1,8 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { Suspense, lazy, useEffect, useState } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
-import RouteLoader from './components/ui/RouteLoader'
 
 const HomePage = lazy(() => import('./pages/HomePage'))
 const ProductPage = lazy(() => import('./pages/ProductPage'))
@@ -29,36 +28,10 @@ function ScrollToTop() {
   return null
 }
 
-function isReloadNavigation() {
-  if (typeof performance === 'undefined') return false
-
-  const navEntries = performance.getEntriesByType?.('navigation')
-  if (navEntries && navEntries.length > 0 && navEntries[0]?.type) {
-    return navEntries[0].type === 'reload'
-  }
-
-  if (performance.navigation) {
-    return performance.navigation.type === 1
-  }
-
-  return false
-}
-
 function App() {
-  const [showReloadLoader, setShowReloadLoader] = useState(false)
-
-  useEffect(() => {
-    if (!isReloadNavigation()) return
-
-    setShowReloadLoader(true)
-    const timer = setTimeout(() => setShowReloadLoader(false), 2800)
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
-      <RouteLoader active={showReloadLoader} />
       <Header />
       <main className="flex-1">
         <Suspense fallback={null}>

@@ -123,7 +123,7 @@ export default function NachhaltigkeitPage() {
 
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative hidden lg:block">
               <div className="aspect-[4/3] relative overflow-hidden">
-                <img src="/images/aero-garden.jpeg" alt="Waermepumpe im Gruenen" className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src="/images/aero-garden.jpeg" alt="Waermepumpe im Gruenen" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gitter opacity-40 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-n-950/40" />
               </div>
@@ -228,7 +228,7 @@ export default function NachhaltigkeitPage() {
       {/* ── Impact Image Strip ─────────────────────────── */}
       <section className="relative">
         <div className="aspect-[21/9] lg:aspect-[3/1] relative overflow-hidden">
-          <img src="/images/factory-aerial.jpg" alt="iDM Werk mit PV" className="w-full h-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/factory-aerial.jpg" alt="iDM Werk mit PV" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gitter opacity-40 mix-blend-overlay" />
           <div className="absolute inset-0 bg-gradient-to-t from-n-950/80 via-n-950/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12">

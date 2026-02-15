@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 export default function RotatingWordLine({
@@ -12,19 +12,34 @@ export default function RotatingWordLine({
   showLeadLine = true,
 }) {
   const [index, setIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const containerRef = useRef(null)
+
+  // Only run the interval when the component is visible on screen
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
-    if (!words?.length) return undefined
+    if (!isVisible || !words?.length) return undefined
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length)
     }, interval)
     return () => clearInterval(timer)
-  }, [interval, words])
+  }, [interval, words, isVisible])
 
   if (!words?.length) return null
 
   return (
-    <div className={`flex items-center gap-3 min-h-8 ${className}`}>
+    <div ref={containerRef} className={`flex items-center gap-3 min-h-8 ${className}`}>
       {showLeadLine && <div className="w-8 h-[2px] bg-idm" />}
       <span className={`relative inline-flex items-center overflow-hidden ${widthClass} h-8`}>
         <AnimatePresence mode="wait">

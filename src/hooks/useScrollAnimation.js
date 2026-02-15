@@ -36,8 +36,12 @@ export function useCountUp(end, duration = 2000, isVisible = true) {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
-    if (!isVisible) return
+    if (!isVisible) {
+      setCount(0)
+      return
+    }
 
+    let rafId
     let startTime = null
     const startValue = 0
 
@@ -48,11 +52,12 @@ export function useCountUp(end, duration = 2000, isVisible = true) {
       setCount(Math.floor(eased * (end - startValue) + startValue))
 
       if (progress < 1) {
-        requestAnimationFrame(animate)
+        rafId = requestAnimationFrame(animate)
       }
     }
 
-    requestAnimationFrame(animate)
+    rafId = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(rafId)
   }, [end, duration, isVisible])
 
   return count
@@ -63,11 +68,18 @@ export function useParallax(speed = 0.5) {
   const ref = useRef(null)
 
   useEffect(() => {
+    let ticking = false
+
     function handleScroll() {
-      if (!ref.current) return
-      const rect = ref.current.getBoundingClientRect()
-      const scrolled = window.innerHeight - rect.top
-      setOffset(scrolled * speed * 0.1)
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(() => {
+        if (!ref.current) { ticking = false; return }
+        const rect = ref.current.getBoundingClientRect()
+        const scrolled = window.innerHeight - rect.top
+        setOffset(scrolled * speed * 0.1)
+        ticking = false
+      })
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })

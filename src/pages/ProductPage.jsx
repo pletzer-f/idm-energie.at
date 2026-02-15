@@ -11,7 +11,7 @@ const productData = {
     tagline: 'Luft-Waermepumpen',
     headline: 'Energie aus der Luft.\nEffizient. Flexibel. Leise.',
     description: 'Die AERO-Serie nutzt die Aussenluft als Waermequelle — die einfachste und flexibelste Loesung fuer Neubau und Sanierung. Modulierend, fluesterleise und mit Vorlauftemperaturen bis 70°C.',
-    heroImage: '/images/luftwaermepumpe.png',
+    heroImage: '/images/luftwaermepumpe.jpg',
     highlights: [
       { label: 'Leistungsbereich', value: '2 – 50 kW' },
       { label: 'Vorlauftemperatur', value: 'bis 70°C' },
@@ -67,7 +67,7 @@ const productData = {
     tagline: 'Kompaktsysteme',
     headline: 'Alles. In einem Geraet.\nKompakt und komplett.',
     description: 'Heizen, kuehlen, Warmwasser — die iPUMP vereint modernste Waermepumpen-Technologie mit integriertem Speicher. Auf minimaler Stellflaeche, mit maximalem Komfort und R290.',
-    heroImage: '/images/products-lineup-transparent.png',
+    heroImage: '/images/products-lineup-transparent.jpg',
     highlights: [
       { label: 'Leistungsbereich', value: '2 – 12 kW' },
       { label: 'Speicher', value: 'bis 432 Liter' },
@@ -94,7 +94,7 @@ const productData = {
     tagline: 'Gross-Waermepumpen',
     headline: 'Kraft fuer grosse Projekte.\nBis 1.500 kW.',
     description: 'Wenn es um grosse Leistung geht, ist MAX die Antwort. Durch intelligente Kaskadierung bis zu 1.500 kW — fuer Hotels, Wohnanlagen, Gewerbe- und Industriegebaeude.',
-    heroImage: '/images/products-lineup-transparent.png',
+    heroImage: '/images/products-lineup-transparent.jpg',
     highlights: [
       { label: 'Leistungsbereich', value: 'bis 1.500 kW' },
       { label: 'Kaskadierung', value: 'bis 10 Geraete' },

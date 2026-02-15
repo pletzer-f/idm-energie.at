@@ -194,7 +194,7 @@ export default function InnovationPage() {
       {/* ── Parallax Image ─────────────────────────────── */}
       <section ref={parallaxRef} className="relative h-[50vh] lg:h-[60vh] overflow-hidden">
         <motion.div style={{ y: imgY }} className="absolute inset-[-10%] ">
-          <img src="/images/navigator-ion-tablet.png" alt="iON System" className="w-full h-full object-cover" />
+          <img loading="lazy" decoding="async" src="/images/navigator-ion-tablet.jpg" alt="iON System" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gitter opacity-40 mix-blend-overlay" />
           <div className="absolute inset-0 bg-n-950/60" />
         </motion.div>

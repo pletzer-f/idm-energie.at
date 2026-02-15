@@ -21,7 +21,7 @@ const productFamilies = [
     href: '/produkte/luft-waermepumpen',
     range: '2 - 50 kW',
     summary: 'Die Energie der Aussenluft nutzen - modulierend, fluesterleise und bis 70 C Vorlauf.',
-    image: '/images/luftwaermepumpe.png',
+    image: '/images/luftwaermepumpe.jpg',
     transparent: true,
     tags: ['Neubau', 'Sanierung', 'R290', 'Kuehlen'],
   },
@@ -50,7 +50,7 @@ const productFamilies = [
     href: '/produkte/grosswaermepumpen',
     range: 'bis 1.500 kW',
     summary: 'Kaskadierbare Grossanlagen fuer Hotels, Quartiere, Gewerbe und Industrie.',
-    image: '/images/technician-plant-room.png',
+    image: '/images/technician-plant-room.jpg',
     tags: ['Kaskade', 'BACnet', 'Industrie'],
   },
   {
@@ -59,7 +59,7 @@ const productFamilies = [
     href: '/produkte/navigator',
     range: '7" Touch + iON KI',
     summary: 'Das Gehirn der Anlage: Wetter-, Strompreis- und Verbrauchsoptimierung in Echtzeit.',
-    image: '/images/navigator-energy-prices.png',
+    image: '/images/navigator-energy-prices.jpg',
     tags: ['iON KI', 'PV-Integration', 'App'],
   },
   {
@@ -188,7 +188,9 @@ export default function ProductsOverviewPage() {
                 <Link to={family.href} className="group block border border-n-100 hover:border-idm/30 transition-all h-full bg-white overflow-hidden">
                   <div className="relative h-44 bg-n-950">
                     <img
-                      src={family.image}
+                loading="lazy"
+                decoding="async"
+                src={family.image}
                       alt={family.name}
                       className={`w-full h-full ${family.transparent ? 'object-contain p-6' : 'object-cover'} group-hover:scale-105 transition-transform duration-700`}
                     />

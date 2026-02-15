@@ -138,7 +138,7 @@ export default function Hero() {
             {/* Product image — prominent */}
             <div className="relative z-10">
               <img
-                src="/images/products-lineup-transparent.png"
+                src="/images/products-lineup-transparent.jpg"
                 alt="iDM Waermepumpen Produktfamilie"
                 className="w-full max-w-[630px] h-auto object-contain drop-shadow-2xl"
               />

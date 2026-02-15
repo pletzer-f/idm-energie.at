@@ -23,7 +23,7 @@ const primarySolutions = [
     summary:
       'Maximale Effizienz durch niedrige Vorlauftemperaturen, intelligente Regelung und perfekte PV-Integration.',
     stats: ['bis 80% Foerderung moegl.', 'Heizen + Kuehlen + Warmwasser', 'NAVIGATOR + iON KI'],
-    image: '/images/house-cutaway-hq.png',
+    image: '/images/house-cutaway-hq.jpg',
     icon: Home,
     href: '/loesungen/neubau',
   },
@@ -156,7 +156,7 @@ export default function SolutionsOverviewPage() {
               >
                 <Link to={solution.href} className="group block border border-n-100 hover:border-idm/30 transition-all h-full overflow-hidden">
                   <div className="relative h-48 bg-n-950">
-                    <img src={solution.image} alt={solution.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img loading="lazy" decoding="async" src={solution.image} alt={solution.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-n-950/80 via-n-950/20 to-transparent" />
                     <div className="absolute top-4 left-4 w-9 h-9 bg-idm text-n-900 flex items-center justify-center">
                       <solution.icon className="w-4 h-4" />

@@ -9,11 +9,13 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState(null)
-  const [mobileExpandedMenu, setMobileExpandedMenu] = useState(null)
   const location = useLocation()
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30)
+    const onScroll = () => {
+      const isScrolled = window.scrollY > 30
+      setScrolled((prev) => (prev === isScrolled ? prev : isScrolled))
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -21,7 +23,6 @@ export default function Header() {
   useEffect(() => {
     setMobileOpen(false)
     setActiveMenu(null)
-    setMobileExpandedMenu(null)
   }, [location])
 
   const isHero = !scrolled
@@ -126,75 +127,55 @@ export default function Header() {
             <div className="pt-20 px-6 pb-8 h-full overflow-y-auto">
               <nav className="space-y-1">
                 {navigation.map((item, i) => (
-                  <motion.div key={item.label} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.05 }} className="border-b border-white/10">
+                  <motion.div key={item.label} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.05 }}>
                     {item.children ? (
-                      <>
-                        <button
-                          type="button"
-                          aria-label={`${item.label} Untermenue`}
-                          aria-expanded={mobileExpandedMenu === item.label}
-                          onClick={() => setMobileExpandedMenu((prev) => (prev === item.label ? null : item.label))}
-                          className="w-full py-4 flex items-center justify-between text-left text-xl font-semibold text-white uppercase tracking-[0.02em] hover:text-idm transition-colors"
-                        >
+                      <details className="group border-b border-white/10">
+                        <summary className="list-none py-4 flex items-center justify-between text-xl font-semibold text-white uppercase tracking-[0.02em] cursor-pointer hover:text-idm transition-colors [&::-webkit-details-marker]:hidden">
                           <span>{item.label}</span>
-                          <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-300 ${mobileExpandedMenu === item.label ? 'rotate-180 text-idm' : 'text-n-300'}`} />
-                        </button>
-
-                        <AnimatePresence initial={false}>
-                          {mobileExpandedMenu === item.label && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: 'auto', opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                              className="overflow-hidden"
-                            >
-                              <div className="pb-4 space-y-3">
-                                <Link
-                                  to={item.href}
-                                  className="group flex items-center justify-between gap-3 rounded-sm border border-white/12 px-3 py-2.5 hover:border-idm/40 hover:bg-white/5 transition-all"
-                                >
-                                  <div className="text-sm font-semibold text-white group-hover:text-idm transition-colors">
-                                    Alle {item.label}
-                                  </div>
-                                  <ArrowRight className="w-3.5 h-3.5 shrink-0 text-n-500 group-hover:text-idm group-hover:translate-x-0.5 transition-all" />
-                                </Link>
-
-                                {item.children.map((group) => (
-                                  <div key={group.group}>
-                                    <div className="text-[10px] font-semibold text-n-500 uppercase tracking-[0.16em] mb-2">
-                                      {group.group}
+                          <ChevronDown className="w-5 h-5 shrink-0 text-n-300 transition-transform duration-300 group-open:rotate-180 group-open:text-idm" />
+                        </summary>
+                        <div className="pb-4 space-y-3">
+                          <Link
+                            to={item.href}
+                            className="group flex items-center justify-between gap-3 rounded-sm border border-white/12 px-3 py-2.5 hover:border-idm/40 hover:bg-white/5 transition-all"
+                          >
+                            <div className="text-sm font-semibold text-white group-hover:text-idm transition-colors">
+                              Alle {item.label}
+                            </div>
+                            <ArrowRight className="w-3.5 h-3.5 shrink-0 text-n-500 group-hover:text-idm group-hover:translate-x-0.5 transition-all" />
+                          </Link>
+                          {item.children.map((group) => (
+                            <div key={group.group}>
+                              <div className="text-[10px] font-semibold text-n-500 uppercase tracking-[0.16em] mb-2">
+                                {group.group}
+                              </div>
+                              <div className="space-y-1.5">
+                                {group.items.map((sub) => (
+                                  <Link
+                                    key={sub.href}
+                                    to={sub.href}
+                                    className="group flex items-center justify-between gap-3 rounded-sm border border-white/12 px-3 py-2.5 hover:border-idm/40 hover:bg-white/5 transition-all"
+                                  >
+                                    <div className="min-w-0">
+                                      <div className="text-sm font-semibold text-white group-hover:text-idm transition-colors">
+                                        {sub.label}
+                                      </div>
+                                      <div className="text-[11px] text-n-500 mt-0.5">
+                                        {sub.desc}
+                                      </div>
                                     </div>
-                                    <div className="space-y-1.5">
-                                      {group.items.map((sub) => (
-                                        <Link
-                                          key={sub.href}
-                                          to={sub.href}
-                                          className="group flex items-center justify-between gap-3 rounded-sm border border-white/12 px-3 py-2.5 hover:border-idm/40 hover:bg-white/5 transition-all"
-                                        >
-                                          <div className="min-w-0">
-                                            <div className="text-sm font-semibold text-white group-hover:text-idm transition-colors">
-                                              {sub.label}
-                                            </div>
-                                            <div className="text-[11px] text-n-500 mt-0.5">
-                                              {sub.desc}
-                                            </div>
-                                          </div>
-                                          <ArrowRight className="w-3.5 h-3.5 shrink-0 text-n-500 group-hover:text-idm group-hover:translate-x-0.5 transition-all" />
-                                        </Link>
-                                      ))}
-                                    </div>
-                                  </div>
+                                    <ArrowRight className="w-3.5 h-3.5 shrink-0 text-n-500 group-hover:text-idm group-hover:translate-x-0.5 transition-all" />
+                                  </Link>
                                 ))}
                               </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </>
+                            </div>
+                          ))}
+                        </div>
+                      </details>
                     ) : (
                       <Link
                         to={item.href}
-                        className={`py-4 flex items-center justify-between text-xl font-semibold uppercase tracking-[0.02em] transition-colors ${
+                        className={`py-4 border-b border-white/10 flex items-center justify-between text-xl font-semibold uppercase tracking-[0.02em] transition-colors ${
                           location.pathname.startsWith(item.href) ? 'text-idm' : 'text-white hover:text-idm'
                         }`}
                       >

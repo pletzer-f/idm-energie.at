@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { ArrowRight, Calendar, ArrowUpRight } from 'lucide-react'
 
 const articles = [
@@ -18,7 +18,7 @@ const articles = [
     excerpt: 'Wie kuenstliche Intelligenz Ihre Heizkosten senkt und den Komfort steigert — automatisch.',
     date: '5. Feb 2026',
     href: '/aktuelles/news/ion-ki-technologie',
-    image: '/images/ion-touchscreen.png',
+    image: '/images/ion-touchscreen.jpg',
   },
   {
     tag: 'Unternehmen',
@@ -49,7 +49,9 @@ function FeaturedCard({ article }) {
         {/* Full-bleed image — fills entire card height to align with right column */}
         <div className="relative aspect-[16/9] lg:aspect-auto lg:h-full overflow-hidden">
           <img
-            src={article.image}
+                loading="lazy"
+                decoding="async"
+                src={article.image}
             alt={article.title}
             className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out"
           />
@@ -126,7 +128,9 @@ function SmallCard({ article, index }) {
         {/* Thumbnail */}
         <div className="shrink-0 w-28 h-28 relative overflow-hidden">
           <img
-            src={article.image}
+                loading="lazy"
+                decoding="async"
+                src={article.image}
             alt={article.title}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
@@ -171,13 +175,6 @@ export default function NewsTeaser() {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  })
-
-  const lineWidth = useTransform(scrollYProgress, [0.1, 0.5], ['0%', '100%'])
-
   const featured = articles[0]
   const rest = articles.slice(1)
 
@@ -201,11 +198,13 @@ export default function NewsTeaser() {
               Neues von iDM.
             </h2>
 
-            {/* Animated underline */}
+            {/* Animated underline — plays once on view */}
             <motion.div className="mt-4 h-[2px] bg-n-100 relative overflow-hidden w-32">
               <motion.div
                 className="absolute inset-y-0 left-0 bg-idm"
-                style={{ width: lineWidth }}
+                initial={{ width: '0%' }}
+                animate={isInView ? { width: '100%' } : {}}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
               />
             </motion.div>
           </motion.div>

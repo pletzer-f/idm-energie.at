@@ -14,21 +14,21 @@ const milestones = [
     year: '2024',
     title: '800 Koepfe. Ein Ziel.',
     description: 'Ein Team aus Ingenieuren, Technikern und Visionaeren entwickelt und fertigt alles unter einem Dach — vom Konzept bis zur fertigen Waermepumpe.',
-    image: '/images/engineer-cad.png',
+    image: '/images/engineer-cad.jpg',
     stat: { value: 800, suffix: '', label: 'Mitarbeiter:innen' },
   },
   {
     year: 'iON',
     title: 'Technologie, die vorausdenkt.',
     description: 'Unsere iON KI-Technologie lernt Ihr Heizverhalten, optimiert automatisch und senkt Ihre Kosten — vorausschauend und intelligent.',
-    image: '/images/navigator-ion-tablet.png',
+    image: '/images/navigator-ion-tablet.jpg',
     stat: { value: 30, suffix: '%', label: 'Energieeinsparung' },
   },
   {
     year: 'R290',
     title: 'Fuer eine saubere Zukunft.',
     description: 'Natuerliches Kaeltemittel R290, emissionsfreie Waerme aus Erde, Luft und Wasser. Von 2 bis 1.500 kW — fuer jedes Projekt.',
-    image: '/images/pcb-closeup.png',
+    image: '/images/pcb-closeup.jpg',
     stat: { value: 1500, suffix: ' kW', label: 'Maximale Leistung' },
   },
 ]
@@ -55,11 +55,11 @@ export default function WhyIdm() {
   })
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    const index = Math.min(
+    const idx = Math.min(
       milestones.length - 1,
       Math.floor(latest * milestones.length)
     )
-    setActiveIndex(index)
+    setActiveIndex((prev) => (prev === idx ? prev : idx))
   })
 
   return (
@@ -137,7 +137,7 @@ export default function WhyIdm() {
                         className={activeIndex === i ? 'relative' : 'absolute inset-x-0 top-0'}
                         style={{ pointerEvents: activeIndex === i ? 'auto' : 'none' }}
                       >
-                        <div className="bg-n-950/90 backdrop-blur-sm p-1">
+                        <div className="bg-n-950/95 p-1">
                           <div className="flex items-center gap-3 mb-4">
                             <span className="text-idm font-mono font-bold text-xl">
                               {milestone.year}
@@ -173,11 +173,13 @@ export default function WhyIdm() {
                         className="absolute inset-0"
                       >
                         <img
+                          loading="lazy"
+                          decoding="async"
                           src={milestone.image}
                           alt={milestone.title}
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gitter opacity-60 mix-blend-overlay" />
+                        <div className="absolute inset-0 bg-gitter opacity-40 pointer-events-none" />
                         <div className="absolute inset-0 bg-gradient-to-t from-n-950/80 via-transparent to-n-950/60" />
                       </motion.div>
                     ))}
@@ -241,12 +243,14 @@ export default function WhyIdm() {
                         className="absolute inset-0"
                       >
                         <img
+                          loading="lazy"
+                          decoding="async"
                           src={milestone.image}
                           alt={milestone.title}
                           className="w-full h-full object-cover"
                         />
                         {/* Gitter overlay on image */}
-                        <div className="absolute inset-0 bg-gitter opacity-60 mix-blend-overlay" />
+                        <div className="absolute inset-0 bg-gitter opacity-40 pointer-events-none" />
                         <div className="absolute inset-0 bg-gradient-to-r from-n-950/60 to-transparent" />
                         <div className="absolute inset-0 bg-gradient-to-t from-n-950/40 to-transparent" />
                       </motion.div>

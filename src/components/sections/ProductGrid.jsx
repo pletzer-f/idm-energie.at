@@ -11,7 +11,7 @@ const products = [
     tagline: 'Luft-Waermepumpen',
     spec: '2 – 50 kW',
     icon: Wind,
-    image: '/images/luftwaermepumpe.png',
+    image: '/images/luftwaermepumpe.jpg',
     transparent: true,
     href: '/produkte/luft-waermepumpen',
     features: ['R290', 'Modulierend', 'bis 70 \u00b0C'],
@@ -66,7 +66,9 @@ function ProductCard({ product, index }) {
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden bg-n-100">
           <img
-            src={product.image}
+                loading="lazy"
+                decoding="async"
+                src={product.image}
             alt={product.name}
             className={`w-full h-full ${product.transparent ? 'object-contain p-5' : 'object-cover'} group-hover:scale-105 transition-transform duration-700 ease-out`}
           />
@@ -77,10 +79,10 @@ function ProductCard({ product, index }) {
 
           {/* Top: spec badge */}
           <div className="absolute top-3 left-3 flex items-center gap-1.5">
-            <div className="w-6 h-6 bg-n-950/60 backdrop-blur-sm flex items-center justify-center">
+            <div className="w-6 h-6 bg-n-950/80 flex items-center justify-center">
               <Icon className="w-3 h-3 text-idm" />
             </div>
-            <span className="text-[9px] font-mono text-white/80 tracking-[0.12em] px-2 py-0.5 bg-n-950/50 backdrop-blur-sm uppercase">
+            <span className="text-[9px] font-mono text-white/80 tracking-[0.12em] px-2 py-0.5 bg-n-950/70 uppercase">
               {product.spec}
             </span>
           </div>

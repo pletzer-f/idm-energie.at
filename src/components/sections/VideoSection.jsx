@@ -17,14 +17,14 @@ const videos = [
     title: '3D-Animation: So funktioniert eine Waermepumpe',
     tag: 'Technologie',
     youtubeId: null,
-    thumbnail: '/images/technician-plant-room.png',
+    thumbnail: '/images/technician-plant-room.jpg',
   },
   {
     id: 'ion',
     title: 'iON KI-Technologie — Intelligentes Energiemanagement',
     tag: 'Innovation',
     youtubeId: null,
-    thumbnail: '/images/navigator-ion-tablet.png',
+    thumbnail: '/images/navigator-ion-tablet.jpg',
   },
   {
     id: 'media',
@@ -63,7 +63,9 @@ export default function VideoSection() {
               <>
                 {/* Thumbnail */}
                 <img
-                  src={videos[0].thumbnail}
+                loading="lazy"
+                decoding="async"
+                src={videos[0].thumbnail}
                   alt={videos[0].title}
                   className="absolute inset-0 w-full h-full object-cover opacity-60"
                 />
@@ -120,7 +122,9 @@ export default function VideoSection() {
               <div className="group cursor-pointer relative overflow-hidden bg-n-50 hover:bg-n-100/80 transition-all duration-500">
                 <div className="aspect-video relative overflow-hidden">
                   <img
-                    src={video.thumbnail}
+                loading="lazy"
+                decoding="async"
+                src={video.thumbnail}
                     alt={video.title}
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                   />

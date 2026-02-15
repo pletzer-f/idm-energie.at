@@ -12,7 +12,7 @@ const solutionData = {
     headline: 'Perfekt von Anfang an.\nIhre Waermepumpe fuer den Neubau.',
     description: 'Im Neubau haben Sie die Freiheit, von Beginn an auf die effizienteste Heiztechnologie zu setzen. Niedrige Vorlauftemperaturen, Fussbodenheizung und optimale Daemmung machen die Waermepumpe zur idealen Loesung.',
     icon: Home,
-    heroImage: '/images/house-cutaway-hq.png',
+    heroImage: '/images/house-cutaway-hq.jpg',
     stats: [
       { value: '35°C', label: 'Vorlauftemperatur' },
       { value: 'COP 5+', label: 'Effizienz' },
@@ -330,7 +330,7 @@ export default function SolutionPage() {
               className="relative flex items-center justify-center"
             >
               <div className="aspect-[4/3] relative overflow-hidden w-full">
-                <img src={solution.heroImage} alt={solution.title} className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src={solution.heroImage} alt={solution.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gitter opacity-40 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-n-950/40" />
               </div>

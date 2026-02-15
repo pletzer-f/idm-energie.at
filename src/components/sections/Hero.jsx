@@ -22,7 +22,8 @@ export default function Hero() {
       <GitterOverlay />
 
       {/* Subtle radial glow behind the product */}
-      <div className="absolute top-1/2 right-[20%] -translate-y-1/2 w-[700px] h-[700px] bg-idm/[0.04] rounded-full blur-[160px] pointer-events-none" />
+      {/* Radial glow — uses CSS gradient instead of GPU-heavy blur filter */}
+      <div className="absolute top-1/2 right-[20%] -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(242,230,77,0.04) 0%, transparent 70%)' }} />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
         <div className="grid lg:grid-cols-2 items-center gap-10 lg:gap-6 min-h-screen py-32 lg:py-20">
@@ -138,9 +139,11 @@ export default function Hero() {
             {/* Product image — prominent */}
             <div className="relative z-10">
               <img
-                src="/images/products-lineup-transparent.png"
+                src="/images/products-lineup-transparent.jpg"
                 alt="iDM Waermepumpen Produktfamilie"
                 className="w-full max-w-[630px] h-auto object-contain drop-shadow-2xl"
+                fetchPriority="high"
+                decoding="async"
               />
 
               {/* Floating spec badges on the product */}
@@ -148,7 +151,7 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
-                className="absolute top-[15%] left-0 bg-n-950/90 border border-n-800 px-3 py-2 backdrop-blur-sm"
+                className="absolute top-[15%] left-0 bg-n-950/95 border border-n-800 px-3 py-2"
               >
                 <span className="text-[10px] font-mono text-n-500 tracking-wider block">LEISTUNG</span>
                 <span className="text-sm font-mono font-bold text-idm">2 – 1.500 kW</span>
@@ -158,7 +161,7 @@ export default function Hero() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.4, duration: 0.5 }}
-                className="absolute top-[40%] right-0 bg-n-950/90 border border-n-800 px-3 py-2 backdrop-blur-sm"
+                className="absolute top-[40%] right-0 bg-n-950/95 border border-n-800 px-3 py-2"
               >
                 <span className="text-[10px] font-mono text-n-500 tracking-wider block">KAELTEMITTEL</span>
                 <span className="text-sm font-mono font-bold text-idm">R290</span>
@@ -168,7 +171,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.6, duration: 0.5 }}
-                className="absolute bottom-[10%] left-[10%] bg-n-950/90 border border-n-800 px-3 py-2 backdrop-blur-sm"
+                className="absolute bottom-[10%] left-[10%] bg-n-950/95 border border-n-800 px-3 py-2"
               >
                 <span className="text-[10px] font-mono text-n-500 tracking-wider block">VORLAUF</span>
                 <span className="text-sm font-mono font-bold text-idm">bis 70°C</span>

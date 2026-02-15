@@ -38,7 +38,7 @@ function InteractiveConfigurator() {
   const selected = buildingTypes[selectedBuilding]
 
   return (
-    <div className="bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm overflow-hidden">
+    <div className="bg-white/[0.03] border border-white/[0.08] overflow-hidden">
       {/* Progress header */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.06]">
         <div className="flex items-center gap-2">
@@ -259,7 +259,7 @@ export default function ConfiguratorTeaser() {
       <div className="absolute inset-0 bg-n-950" />
       <div className="absolute inset-0 bg-gitter pointer-events-none" />
       <div className="absolute inset-0 bg-grid-fine opacity-30 pointer-events-none" />
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-idm/[0.04] rounded-full blur-[150px]" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full" style={{ background: 'radial-gradient(ellipse, rgba(242,230,77,0.04) 0%, transparent 70%)' }} />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 py-28 lg:py-40">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">

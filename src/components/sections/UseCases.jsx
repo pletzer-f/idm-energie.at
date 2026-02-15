@@ -13,7 +13,7 @@ const cases = [
     cop: '5.2',
     description: 'Effizient, leise und zukunftssicher ab dem ersten Tag.',
     href: '/loesungen/neubau',
-    image: '/images/house-cutaway-hq.png',
+    image: '/images/house-cutaway-hq.jpg',
   },
   {
     id: 'sanierung',
@@ -139,6 +139,8 @@ export default function UseCases() {
                   key={item.id}
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   initial={false}
                   animate={{
                     opacity: activeCase === i ? 1 : 0,

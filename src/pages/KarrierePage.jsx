@@ -95,7 +95,7 @@ export default function KarrierePage() {
 
             <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative hidden lg:block">
               <div className="aspect-[4/3] relative overflow-hidden">
-                <img src="/images/engineer-cad.png" alt="Team iDM" className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src="/images/engineer-cad.jpg" alt="Team iDM" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gitter opacity-40 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-n-950/40" />
               </div>

@@ -207,7 +207,7 @@ export default function SchulungenPage() {
               className="relative hidden lg:block"
             >
               <div className="aspect-[4/3] relative overflow-hidden">
-                <img src="/images/engineer-cad.png" alt="iDM Schulungszentrum" className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src="/images/engineer-cad.jpg" alt="iDM Schulungszentrum" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gitter opacity-40 mix-blend-overlay" />
                 <div className="absolute inset-0 bg-gradient-to-l from-transparent to-n-950/40" />
               </div>
