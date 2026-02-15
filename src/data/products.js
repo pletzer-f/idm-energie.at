@@ -1,0 +1,143 @@
+export const productCategories = [
+  {
+    id: 'aero',
+    name: 'AERO',
+    subtitle: 'Luft-Waermepumpen',
+    description: 'Nutzt die Energie der Aussenluft — ideal fuer Neubau und Sanierung.',
+    longDescription: 'Die Energie der Aussenluft nutzen — einfach, effizient und ueberall einsetzbar. Unsere AERO Waermepumpen sind die ideale Wahl fuer Neubau und Sanierung. Modulierend und fluesterleise, mit Vorlauftemperaturen bis 70 Grad C.',
+    icon: 'Wind',
+    color: '#FBF064',
+    href: '/produkte/luft-waermepumpen',
+    products: [
+      { name: 'AERO ALM 2-8', capacity: '2-8 kW', highlight: 'Modulierend, kompakt, ideal fuer Niedrigenergiehaeuser' },
+      { name: 'AERO ALM 4-12', capacity: '4-12 kW', highlight: 'Vielseitig einsetzbar, Neubau & Sanierung' },
+      { name: 'AERO ALM 6-15', capacity: '6-15 kW', highlight: 'Starke Leistung, auch fuer groessere Gebaeude' },
+      { name: 'AERO ALM 10-50 MAX', capacity: '10-50 kW', highlight: 'Modulierend, fuer Gewerbe & Mehrfamilienhaeuser' },
+      { name: 'AERO SLM 3-11', capacity: '3-11 kW', highlight: 'Split-Bauweise, flexible Aufstellung' },
+      { name: 'AERO SLM 6-17', capacity: '6-17 kW', highlight: 'Split, hohe Leistung, optional mit HGL' },
+    ],
+  },
+  {
+    id: 'terra',
+    name: 'TERRA',
+    subtitle: 'Erdwaermepumpen',
+    description: 'Erschliesst die konstante Waerme der Erde — fuer hoechste Effizienz.',
+    longDescription: 'Die Erde als Energiequelle — konstant, verlaesslich und hocheffizient. Unsere TERRA Waermepumpen nutzen die gleichmaessige Temperatur des Erdreichs fuer maximale Effizienz und minimale Betriebskosten.',
+    icon: 'Mountain',
+    color: '#FBF064',
+    href: '/produkte/erdwaermepumpen',
+    products: [
+      { name: 'TERRA SWM 3-13', capacity: '3-13 kW', highlight: 'Modulierend, stufenlose Leistungsanpassung' },
+      { name: 'TERRA SWM 6-17', capacity: '6-17 kW', highlight: 'Modulierend, hoehere Leistungsklasse' },
+      { name: 'TERRA SW TWIN', capacity: 'bis 40 kW', highlight: 'Zwei Kompressoren, maximale Effizienz' },
+      { name: 'TERRA SW TWIN H', capacity: 'bis 40 kW', highlight: 'Hochtemperatur bis 70 Grad C' },
+      { name: 'TERRA SW 55 MAX', capacity: '55 kW', highlight: 'Gross-Waermepumpe, SCOP 5.07' },
+      { name: 'TERRA SW 110 MAX', capacity: '110 kW', highlight: 'Gross-Waermepumpe, kompakte Bauweise' },
+      { name: 'TERRA SW 140 MAX', capacity: '140 kW', highlight: 'Gross-Waermepumpe, nur 1m2 Stellflaeche' },
+    ],
+  },
+  {
+    id: 'ipump',
+    name: 'iPUMP',
+    subtitle: 'Kompakt und komplett',
+    description: 'Heizen, kuehlen und Warmwasser — kompakt in einem Geraet.',
+    longDescription: 'Heizen, kuehlen, Warmwasser — alles in einem Geraet. Die iPUMP vereint modernste Waermepumpen-Technologie mit integriertem Trinkwasserspeicher. Auf minimaler Stellflaeche. Mit maximalem Komfort.',
+    icon: 'Box',
+    color: '#FBF064',
+    href: '/produkte/ipump',
+    products: [
+      { name: 'iPUMP A ONE', capacity: '4-12 kW', highlight: 'Neubau & Sanierung, R290, 320l Speicher' },
+      { name: 'iPUMP A12 ONE', capacity: '4-12 kW', highlight: 'Heizen, Warmwasser, aktive Kuehlung' },
+      { name: 'iPUMP A 2-7', capacity: '2-7 kW', highlight: 'Nur 0,45m2, bis 432l Speicher' },
+      { name: 'iPUMP A 3-11', capacity: '3-11 kW', highlight: 'Kompakt mit integriertem Speicher' },
+      { name: 'iPUMP N5', capacity: 'variabel', highlight: 'DIE Sanierungsloesung fuer Mehrfamilienhaeuser' },
+    ],
+  },
+  {
+    id: 'max',
+    name: 'MAX',
+    subtitle: 'Gross-Waermepumpen',
+    description: 'Leistung bis 1.500 kW — fuer Gewerbe, Industrie und Quartierloesungen.',
+    longDescription: 'Wenn es um grosse Leistung geht, ist MAX die Antwort. Unsere Gross-Waermepumpen liefern bis zu 1.500 kW Heizleistung durch intelligente Kaskadierung — fuer Hotels, Wohnanlagen, Gewerbe- und Industriegebaeude.',
+    icon: 'Building2',
+    color: '#FBF064',
+    href: '/produkte/grosswaermepumpen',
+    products: [],
+  },
+  {
+    id: 'navigator',
+    name: 'NAVIGATOR',
+    subtitle: 'Intelligente Steuerung',
+    description: 'Volle Kontrolle ueber Ihr Energiesystem — smart, vernetzt und KI-optimiert.',
+    longDescription: 'Der NAVIGATOR macht Ihre Waermepumpe intelligent. Mit 7-Zoll-Touchscreen, KI-basierter iON-Technologie und integriertem Energiemanagement haben Sie die volle Kontrolle — jederzeit, ueberall.',
+    icon: 'Cpu',
+    color: '#FBF064',
+    href: '/produkte/navigator',
+    products: [],
+  },
+  {
+    id: 'hygienik',
+    name: 'HYGIENIK',
+    subtitle: 'Speicherloesungen',
+    description: 'Hygienische Warmwasserbereitung mit Frischwasser-Technologie.',
+    longDescription: 'Hygienisch einwandfreies Warmwasser — ohne stehende Wassermengen. Unsere HYGIENIK Speicher erwaermen Trinkwasser im Durchlaufprinzip und erfuellen hoechste Hygienestandards.',
+    icon: 'Droplets',
+    color: '#FBF064',
+    href: '/produkte/speicher',
+    products: [],
+  },
+]
+
+export const useCases = [
+  {
+    id: 'neubau',
+    title: 'Neubau',
+    description: 'Die perfekte Waermepumpe fuer Ihr neues Zuhause — effizient, leise und zukunftssicher.',
+    href: '/loesungen/neubau',
+    icon: 'Home',
+  },
+  {
+    id: 'sanierung',
+    title: 'Sanierung',
+    description: 'Raus aus Oel und Gas. Rein in die Zukunft — mit einer Waermepumpe, die auch im Altbau ueberzeugt.',
+    href: '/loesungen/sanierung',
+    icon: 'RefreshCw',
+  },
+  {
+    id: 'gewerbe',
+    title: 'Gewerbe & Industrie',
+    description: 'Von Hotels bis Wohnanlagen — Waermepumpen-Systeme mit bis zu 1.500 kW Heizleistung.',
+    href: '/loesungen/gewerbe',
+    icon: 'Building2',
+  },
+]
+
+export const stats = [
+  { value: 45, suffix: '+', label: 'Jahre Erfahrung' },
+  { value: 800, suffix: '', label: 'Mitarbeiter:innen' },
+  { value: 1500, suffix: ' kW', label: 'Max. Heizleistung' },
+  { value: 4, suffix: '', label: 'Standorte in Europa' },
+]
+
+export const whyIdm = [
+  {
+    icon: 'Heart',
+    title: 'Familienbetrieb seit 1977',
+    description: 'Was als Tiroler Pionierarbeit begann, ist heute Oesterreichs groesster Waermepumpen-Hersteller. Familiegefuehrt, mit Leidenschaft fuer Innovation.',
+  },
+  {
+    icon: 'Mountain',
+    title: 'Entwickelt & gefertigt in Tirol',
+    description: 'Vom Entwicklungslabor bis zur Fertigungshalle — alles unter einem Dach in Matrei in Osttirol.',
+  },
+  {
+    icon: 'Cpu',
+    title: 'Technologie, die vorausdenkt',
+    description: 'Mit iON KI-Technologie, NAVIGATOR Steuerung und intelligentem Energiemanagement setzen wir den Standard.',
+  },
+  {
+    icon: 'Leaf',
+    title: 'Fuer eine saubere Zukunft',
+    description: 'Emissionsfreie Waerme aus Erde, Luft, Wasser und Sonne — mit natuerlichem Kaeltemittel R290.',
+  },
+]

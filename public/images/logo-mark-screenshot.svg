@@ -1,0 +1,15 @@
+<svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="340" height="340" fill="#060913" />
+  <circle cx="76" cy="74" r="50" fill="#FBF064" />
+  <rect x="34" y="138" width="86" height="168" fill="#FBF064" />
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M132 138H216C276 138 310 172 310 222C310 272 276 306 216 306H132V138ZM196 192H205C224 192 238 204 238 222C238 240 224 252 205 252H196V192Z"
+    fill="#E9E9E9"
+  />
+  <path
+    d="M260 326L270 270H286L299 303L312 270H328L338 326H323L317 290L303 326H296L282 290L276 326H260Z"
+    fill="#E9E9E9"
+  />
+</svg>
