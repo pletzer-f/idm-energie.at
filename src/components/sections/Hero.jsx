@@ -9,16 +9,9 @@ function GitterOverlay() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       <div className="absolute inset-0" style={{
-        backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(9,9,11,0.11) 8px, rgba(9,9,11,0.11) 10px)`,
+        backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(251,240,100,0.04) 8px, rgba(251,240,100,0.04) 10px)`,
       }} />
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(9,9,11,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(9,9,11,0.07) 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }}
-      />
+      <div className="absolute inset-0 bg-grid-fine opacity-35" />
     </div>
   )
 }
