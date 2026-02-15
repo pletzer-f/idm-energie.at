@@ -12,10 +12,7 @@ export default function Header() {
   const location = useLocation()
 
   useEffect(() => {
-    const onScroll = () => {
-      const isScrolled = window.scrollY > 30
-      setScrolled((prev) => (prev === isScrolled ? prev : isScrolled))
-    }
+    const onScroll = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -25,7 +22,7 @@ export default function Header() {
     setActiveMenu(null)
   }, [location])
 
-  const isHero = !scrolled
+  const isHero = !scrolled && location.pathname !== '/'
 
   return (
     <>

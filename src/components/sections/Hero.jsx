@@ -17,13 +17,14 @@ function GitterOverlay() {
 }
 
 export default function Hero() {
+  const heroSrc = '/images/products-lineup-transparent.png'
+
   return (
-    <section className="relative min-h-screen bg-n-950 overflow-hidden">
+    <section className="relative min-h-screen bg-white overflow-hidden">
       <GitterOverlay />
 
       {/* Subtle radial glow behind the product */}
-      {/* Radial glow — uses CSS gradient instead of GPU-heavy blur filter */}
-      <div className="absolute top-1/2 right-[20%] -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(242,230,77,0.04) 0%, transparent 70%)' }} />
+      <div className="absolute top-1/2 right-[20%] -translate-y-1/2 w-[700px] h-[700px] bg-idm/[0.04] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 w-full">
         <div className="grid lg:grid-cols-2 items-center gap-10 lg:gap-6 min-h-screen py-32 lg:py-20">
@@ -48,10 +49,10 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="mt-8"
             >
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white leading-[0.95] tracking-[-0.03em]">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-n-900 leading-[0.95] tracking-[-0.03em]">
                 Intelligente
               </span>
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white leading-[0.95] tracking-[-0.03em] mt-2">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-n-900 leading-[0.95] tracking-[-0.03em] mt-2">
                 Waermepumpen
               </span>
               <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[0.95] tracking-[-0.03em] mt-2 text-gradient-idm">
@@ -80,7 +81,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="mt-6 text-n-400 text-base md:text-lg leading-relaxed max-w-lg"
+              className="mt-6 text-n-600 text-base md:text-lg leading-relaxed max-w-lg"
             >
               Seit 1977 entwickeln und fertigen wir Waermepumpen in Tirol — fuer Ihr Zuhause,
               Ihr Gebaeude und Ihre Zukunft. Von 2 bis 1.500 kW.
@@ -104,7 +105,7 @@ export default function Hero() {
               </a>
               <Link
                 to="/tools/partnerfinder"
-                className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-white/15 text-white hover:border-white/30 hover:bg-white/5 font-medium text-sm tracking-wide transition-all"
+                className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-n-300 text-n-900 hover:border-n-900 hover:bg-n-50 font-medium text-sm tracking-wide transition-all"
               >
                 Partner in Ihrer Naehe
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -119,7 +120,7 @@ export default function Hero() {
               className="mt-16 flex flex-wrap items-center gap-4"
             >
               {['EHPA', 'ISO 9001', 'ISO 14001', 'Made in Austria'].map((cert) => (
-                <span key={cert} className="text-[11px] font-mono text-n-600 px-3 py-1 border border-n-800 tracking-wider">
+                <span key={cert} className="text-[11px] font-mono text-n-600 px-3 py-1 border border-n-300 tracking-wider">
                   {cert}
                 </span>
               ))}
@@ -139,11 +140,12 @@ export default function Hero() {
             {/* Product image — prominent */}
             <div className="relative z-10">
               <img
-                src="/images/products-lineup-transparent.png"
+                src={heroSrc}
                 alt="iDM Waermepumpen Produktfamilie"
-                className="w-full max-w-[630px] h-auto object-contain drop-shadow-2xl"
-                fetchPriority="high"
+                loading="eager"
                 decoding="async"
+                fetchPriority="high"
+                className="w-full max-w-[630px] h-auto object-contain drop-shadow-2xl"
               />
 
               {/* Floating spec badges on the product */}
@@ -151,7 +153,7 @@ export default function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
-                className="absolute top-[15%] left-0 bg-n-950/95 border border-n-800 px-3 py-2"
+                className="absolute top-[15%] left-0 bg-n-950/90 border border-n-800 px-3 py-2 backdrop-blur-sm"
               >
                 <span className="text-[10px] font-mono text-n-500 tracking-wider block">LEISTUNG</span>
                 <span className="text-sm font-mono font-bold text-idm">2 – 1.500 kW</span>
@@ -161,7 +163,7 @@ export default function Hero() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.4, duration: 0.5 }}
-                className="absolute top-[40%] right-0 bg-n-950/95 border border-n-800 px-3 py-2"
+                className="absolute top-[40%] right-0 bg-n-950/90 border border-n-800 px-3 py-2 backdrop-blur-sm"
               >
                 <span className="text-[10px] font-mono text-n-500 tracking-wider block">KAELTEMITTEL</span>
                 <span className="text-sm font-mono font-bold text-idm">R290</span>
@@ -171,7 +173,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.6, duration: 0.5 }}
-                className="absolute bottom-[10%] left-[10%] bg-n-950/95 border border-n-800 px-3 py-2"
+                className="absolute bottom-[10%] left-[10%] bg-n-950/90 border border-n-800 px-3 py-2 backdrop-blur-sm"
               >
                 <span className="text-[10px] font-mono text-n-500 tracking-wider block">VORLAUF</span>
                 <span className="text-sm font-mono font-bold text-idm">bis 70°C</span>
