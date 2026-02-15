@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { Suspense, lazy, useEffect, useState } from 'react'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import RouteLoader from './components/ui/RouteLoader'
@@ -85,6 +86,7 @@ function App() {
         </Suspense>
       </main>
       <Footer />
+      <SpeedInsights />
     </div>
   )
 }
