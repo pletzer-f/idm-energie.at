@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowRight, ChevronRight } from 'lucide-react'
 import RotatingWordLine from '../ui/RotatingWordLine'
+import { getResponsiveSrcSet } from '../../data/responsiveImages'
 
 const rotatingWords = ['Heizen.', 'Kuehlen.', 'Warmwasser.', 'Zukunft.']
 
@@ -9,15 +10,23 @@ function GitterOverlay() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       <div className="absolute inset-0" style={{
-        backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(251,240,100,0.03) 8px, rgba(251,240,100,0.03) 10px)`,
+        backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(9,9,11,0.11) 8px, rgba(9,9,11,0.11) 10px)`,
       }} />
-      <div className="absolute inset-0 bg-grid-fine opacity-30" />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(9,9,11,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(9,9,11,0.07) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+        }}
+      />
     </div>
   )
 }
 
 export default function Hero() {
   const heroSrc = '/images/products-lineup-transparent.png'
+  const heroSrcSet = getResponsiveSrcSet(heroSrc)
 
   return (
     <section className="relative min-h-screen bg-white overflow-hidden">
@@ -36,7 +45,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-flex items-center gap-2.5 px-4 py-1.5 border border-idm/20 text-idm text-xs font-mono tracking-wide">
+              <span className="inline-flex items-center gap-2.5 px-4 py-1.5 border border-idm/30 bg-n-950 text-idm text-xs font-mono tracking-wide">
                 <span className="w-1.5 h-1.5 bg-idm animate-pulse" />
                 SEIT 1977 — MADE IN AUSTRIA
               </span>
@@ -142,6 +151,8 @@ export default function Hero() {
               <img
                 src={heroSrc}
                 alt="iDM Waermepumpen Produktfamilie"
+                srcSet={heroSrcSet}
+                sizes="(max-width: 1024px) 90vw, 630px"
                 loading="eager"
                 decoding="async"
                 fetchPriority="high"

@@ -23,6 +23,7 @@ export default function Header() {
   }, [location])
 
   const isHero = !scrolled && location.pathname !== '/'
+  const isHomeTop = !scrolled && location.pathname === '/'
 
   return (
     <>
@@ -46,7 +47,7 @@ export default function Header() {
                   <Link
                     to={item.href}
                     className={`relative flex items-center gap-1 px-4 py-2 text-[13px] font-medium tracking-wide uppercase transition-colors ${
-                      isHero ? 'text-white/70 hover:text-white' : 'text-n-500 hover:text-n-900'
+                      isHero ? 'text-white/70 hover:text-white' : isHomeTop ? 'text-n-900 hover:text-n-700' : 'text-n-500 hover:text-n-900'
                     } ${location.pathname.startsWith(item.href) ? (isHero ? 'text-white' : 'text-n-900') : ''}`}
                   >
                     {item.label}
@@ -104,7 +105,7 @@ export default function Header() {
               </a>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className={`lg:hidden p-2 ${isHero ? 'text-white' : 'text-n-700'}`}
+                className={`lg:hidden p-2 ${isHero ? 'text-white' : isHomeTop ? 'text-n-900' : 'text-n-700'}`}
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
