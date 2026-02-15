@@ -18,7 +18,7 @@ function GitterOverlay() {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-n-950 overflow-hidden">
+    <section className="relative min-h-screen bg-white overflow-hidden">
       <GitterOverlay />
 
       {/* Subtle radial glow behind the product */}
@@ -48,10 +48,10 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="mt-8"
             >
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white leading-[0.95] tracking-[-0.03em]">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-n-900 leading-[0.95] tracking-[-0.03em]">
                 Intelligente
               </span>
-              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-white leading-[0.95] tracking-[-0.03em] mt-2">
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-n-900 leading-[0.95] tracking-[-0.03em] mt-2">
                 Waermepumpen
               </span>
               <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[0.95] tracking-[-0.03em] mt-2 text-gradient-idm">
@@ -104,7 +104,7 @@ export default function Hero() {
               </a>
               <Link
                 to="/tools/partnerfinder"
-                className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-white/15 text-white hover:border-white/30 hover:bg-white/5 font-medium text-sm tracking-wide transition-all"
+                className="group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 border border-n-300 text-n-900 hover:border-n-900 hover:bg-n-50 font-medium text-sm tracking-wide transition-all"
               >
                 Partner in Ihrer Naehe
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

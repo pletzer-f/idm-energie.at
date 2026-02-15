@@ -72,7 +72,7 @@ export default function VisionBanner() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <section ref={ref} className="relative bg-n-950 overflow-hidden">
+    <section ref={ref} className="relative bg-white overflow-hidden">
       {/* Match Hero background exactly — same gitter pattern + grid */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0" style={{
@@ -95,7 +95,7 @@ export default function VisionBanner() {
                 <span className="text-n-900 text-3xl font-bold leading-none">&ldquo;</span>
               </div>
               <div>
-                <span className="text-white font-semibold text-sm">Thomas Pletzer & Christoph Bacher</span>
+                <span className="text-n-900 font-semibold text-sm">Thomas Pletzer & Christoph Bacher</span>
                 <span className="block text-n-500 text-[11px] font-mono tracking-wider">GESCHAEFTSFUEHRUNG</span>
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function VisionBanner() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="flex-1"
           >
-            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white leading-snug tracking-[-0.02em]">
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-n-900 leading-snug tracking-[-0.02em]">
               Unser Ziel ist emissionsfreie Waerme fuer alle — zuverlaessig, leistbar und{' '}
               <span className="text-gradient-idm">aus Oesterreich.</span>
             </p>
