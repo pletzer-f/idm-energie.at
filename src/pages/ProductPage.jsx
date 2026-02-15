@@ -191,12 +191,12 @@ export default function ProductPage() {
   return (
     <div className="bg-white">
       {/* ── Hero — fixed height across all product pages ──────── */}
-      <section className="relative bg-n-950 overflow-hidden h-[600px] lg:h-[680px]">
+      <section className="relative bg-n-950 overflow-hidden lg:h-[680px]">
         <div className="absolute inset-0 bg-gitter-dark pointer-events-none" />
         <div className="absolute inset-0 bg-grid-fine opacity-20 pointer-events-none" />
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 h-full">
-          <div className="grid lg:grid-cols-2 gap-10 items-center h-full pt-20 lg:pt-16">
+          <div className="grid lg:grid-cols-2 gap-10 items-center pt-20 lg:pt-16 pb-12 lg:pb-0 lg:h-full">
             {/* Text */}
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
               <Link to="/produkte" className="inline-flex items-center gap-2 text-n-500 text-xs font-mono tracking-wider hover:text-white transition-colors mb-6">
@@ -233,14 +233,14 @@ export default function ProductPage() {
               </div>
 
               {/* CTAs */}
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a href="https://konfigurator.myidm.at/#/" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 px-6 py-3 bg-idm hover:bg-idm-dark text-n-900 font-semibold text-sm transition-all">
+              <div className="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3">
+                <a href="https://konfigurator.myidm.at/#/" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 sm:px-6 py-3 bg-idm hover:bg-idm-dark text-n-900 font-semibold text-sm transition-all">
                   Jetzt konfigurieren <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a href="https://vr.idm-energie.at/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 border border-white/15 text-white hover:border-white/30 text-sm font-medium transition-all">
+                <a href="https://vr.idm-energie.at/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 sm:px-6 py-3 border border-white/15 text-white hover:border-white/30 text-sm font-medium transition-all">
                   <Eye className="w-4 h-4" /> Showroom
                 </a>
-                <a href="#modelle" className="inline-flex items-center gap-2 px-6 py-3 border border-white/15 text-white hover:border-white/30 text-sm font-medium transition-all">
+                <a href="#modelle" className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 sm:px-6 py-3 border border-white/15 text-white hover:border-white/30 text-sm font-medium transition-all">
                   <Download className="w-4 h-4" /> Datenblatt
                 </a>
               </div>
@@ -256,6 +256,9 @@ export default function ProductPage() {
               <img
                 src={product.heroImage}
                 alt={product.name}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="relative z-10 w-full max-w-[460px] mx-auto h-auto object-contain drop-shadow-2xl"
               />
             </motion.div>
