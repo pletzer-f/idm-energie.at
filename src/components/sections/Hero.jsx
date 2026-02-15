@@ -35,8 +35,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-flex items-center gap-2.5 px-4 py-1.5 border border-idm/20 text-idm text-xs font-mono tracking-wide">
-                <span className="w-1.5 h-1.5 bg-idm animate-pulse" />
+              <span className="inline-flex items-center gap-2.5 px-4 py-1.5 border border-n-900/30 text-n-900 text-xs font-mono tracking-wide">
+                <span className="w-1.5 h-1.5 bg-n-900 animate-pulse" />
                 SEIT 1977 — MADE IN AUSTRIA
               </span>
             </motion.div>
