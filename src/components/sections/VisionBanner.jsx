@@ -34,7 +34,7 @@ function LouvreTransition() {
         {Array.from({ length: 8 }).map((_, i) => (
           <motion.div
             key={i}
-            className="w-[10%] h-[3px] bg-idm/10 origin-center"
+            className="w-[10%] h-[3px] bg-n-700/60 origin-center"
             style={{ rotate: slatRotate }}
           />
         ))}
@@ -43,7 +43,7 @@ function LouvreTransition() {
       {/* Animated energy line — single element */}
       <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-n-800 -translate-y-1/2">
         <motion.div
-          className="h-full bg-idm/60 origin-left"
+          className="h-full bg-idm origin-left"
           style={{ width: lineProgress }}
         />
       </div>
