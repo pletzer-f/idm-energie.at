@@ -50,12 +50,12 @@ export default function KarrierePage() {
   return (
     <div className="bg-white">
       {/* ── Hero ───────────────────────────────────────── */}
-      <section className="relative bg-n-950 overflow-hidden h-[600px] lg:h-[680px]">
+      <section className="relative bg-n-950 overflow-hidden min-h-[600px] lg:min-h-[680px]">
         <div className="absolute inset-0 bg-gitter-dark pointer-events-none" />
         <div className="absolute inset-0 bg-grid-fine opacity-20 pointer-events-none" />
 
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 h-full">
-          <div className="grid lg:grid-cols-2 gap-10 items-center h-full pt-20 lg:pt-0">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="grid lg:grid-cols-2 gap-10 items-center min-h-[600px] lg:min-h-[680px] pt-24 pb-12 lg:pt-0 lg:pb-0">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
               <Link to="/" className="inline-flex items-center gap-2 text-n-500 text-xs font-mono tracking-wider hover:text-white transition-colors mb-6">
                 <ArrowLeft className="w-3 h-3" /> STARTSEITE
