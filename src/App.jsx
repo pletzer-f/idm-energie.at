@@ -17,6 +17,9 @@ const UeberUnsPage = lazy(() => import('./pages/UeberUnsPage'))
 const KarrierePage = lazy(() => import('./pages/KarrierePage'))
 const InnovationPage = lazy(() => import('./pages/InnovationPage'))
 const NachhaltigkeitPage = lazy(() => import('./pages/NachhaltigkeitPage'))
+const ServicePage = lazy(() => import('./pages/ServicePage'))
+const UnternehmenPage = lazy(() => import('./pages/UnternehmenPage'))
+const ReferenzenPage = lazy(() => import('./pages/ReferenzenPage'))
 const PlaceholderPage = lazy(() => import('./pages/PlaceholderPage'))
 
 // Scroll to top on route change
@@ -42,12 +45,15 @@ function App() {
             <Route path="/loesungen" element={<SolutionsOverviewPage />} />
             <Route path="/loesungen/:slug" element={<SolutionPage />} />
             <Route path="/tools/partnerfinder" element={<PartnerFinderPage />} />
+            <Route path="/referenzen" element={<ReferenzenPage />} />
             {/* Service pages */}
+            <Route path="/service" element={<ServicePage />} />
             <Route path="/service/after-sales" element={<AfterSalesPage />} />
             <Route path="/service/downloads" element={<DownloadsPage />} />
             <Route path="/service/faq" element={<FAQPage />} />
             <Route path="/service/schulungen" element={<SchulungenPage />} />
             {/* Unternehmen pages */}
+            <Route path="/unternehmen" element={<UnternehmenPage />} />
             <Route path="/unternehmen/ueber-uns" element={<UeberUnsPage />} />
             <Route path="/unternehmen/karriere" element={<KarrierePage />} />
             <Route path="/unternehmen/innovation" element={<InnovationPage />} />

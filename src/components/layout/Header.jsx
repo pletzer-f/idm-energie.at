@@ -108,7 +108,7 @@ export default function Header() {
               </a>
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className={`lg:hidden p-2 ${isHero ? 'text-white' : isHomeTop ? 'text-n-900' : 'text-n-700'}`}
+                className={`lg:hidden p-2 ${scrolled ? 'text-n-700' : 'text-white'}`}
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
